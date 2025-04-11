@@ -28,6 +28,7 @@ func main(){
 	app.Use(logger.New())
 
 	setupRoutes(app)
-
+	appPort := os.Getenv("APP_PORT")
+	log.Println("Starting server on port", appPort)
 	log.Fatal(app.Listen(os.Getenv("APP_PORT")))
 }
